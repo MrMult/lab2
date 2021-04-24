@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TolikSite</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  	.button {
+    background-color: #52AF52;
+    border: none;
+    color: white;
+    padding-bottom: 4px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 4px;
+    border-radius: 4px;
+    opacity: 0.69;
+}
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-image: url(ddd.jpg); 
+			background-size: 100%; 
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			-webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      	<a class="navbar-brand" href="index.html">Tolik</a>
+    </div>
+    	<ul class="nav navbar-nav">
+      		<li><a href="index.html">Home</a></li>
+        <ul class="dropdown-menu">
+        </ul>
+     	</li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Lab stack<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="jQuery.html">Exer jQuery</a></li>
+          	<li><a href="Lab_7.HTML">Lab 7</a></li>
+          	<li class="active"><a href="Lab_8.html">Lab 8</a></li>
+          	<li><a href="#">Lab 9</a></li>
+        </ul>
+     	</li>
+    	</ul>
+  	</div>
+</nav>
+
+<div style="margin-left: 40%; margin-right: 40%; color: white;">
+  <p><b>Номер поїзда</b><input type="text" id="N1" class="form-control" style="line-height: 0.6"></p>
+  <p><b>Назва поїзда</b><input type="text" id="N2" class="form-control" style="line-height: 0.6"></p>
+  <p><b>Час відправлення</b><input type="text" id="N3" class="form-control" style="line-height: 0.6"></p><br>
+</div>
+
+<center><button class="button">Output</button></center>
+<!-- HTML-код модального вікна-->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">х</button>
+        <h4 class="modal-title" >П.І.Б.</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+function fun1(){
+  var c;
+  c = document.getElementById('N1').value;
+  return c;
+}
+
+function fun2(){
+  var k;
+  k = document.getElementById('N2').value;
+  return k;
+}
+
+
+function fun3(){
+  var d;
+  d = document.getElementById('N3').value;
+  return d;
+}
+
+$(document).ready(function(){
+  $(".button").click(function() {
+    $("#myModal").modal('show');
+    $(".modal-body").html("Hello "+fun1()+" "+fun2()+" "+fun3());
+  });
+});
+
+</script>
+</body>
+</html>
